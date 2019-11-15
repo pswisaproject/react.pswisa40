@@ -3,37 +3,41 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import AppComponentContext from './contexts/AppComponentContext';
+import AuthenticatedTopContainer from './containers/AuthenticatedTopContainer';
+import NonAuthenticatedTopContainer from './containers/NonAuthenticatedTopContainer';
+import strings from './assets/localization/index';
+
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  static contextType = AppComponentContext;
+
   render() {
+    // strings.setLanguage(this.props.language);
     return (
-      <AppComponentContext.Provider value={{ ...this.state }}>
-        <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <p>
-              Edit <code>src/App.js</code> and save to reload.
-            </p>
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-          </header>
-        </div>
+      <AppComponentContext.Provider value={{  }}>
+        {this.layoutSelector()}
       </AppComponentContext.Provider>
     );
+  }
+
+  layoutSelector() {
+    let { loggedIn } = this.props;
+    const layout = !loggedIn ? (
+      <NonAuthenticatedTopContainer />
+    ) : (
+        <AuthenticatedTopContainer />
+      );
+    return layout;
   }
 }
 
 function mapStateToProps(state) {
   return {
-    //
+    loggedIn: state.login.loggedIn
+    // theme: state.theme.themeName,
+    // language: state.language.selectedLanguage
   };
 }
 function mapDispatchToProps(dispatch) {

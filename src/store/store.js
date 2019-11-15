@@ -1,6 +1,6 @@
 import configureStore from './configureStore';
 
-const initalState = {};//getReduxStateFromStorage();
+const initalState = { undefined };//getReduxStateFromStorage();
 const store = configureStore(initalState);
 
 export default store;

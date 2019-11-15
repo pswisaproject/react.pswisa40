@@ -1,0 +1,6 @@
+export const API_LOGIN_REQUEST = 'API_LOGIN_REQUEST';
+export const API_LOGIN_SUCCESS = 'API_LOGIN_SUCCESS';
+export const API_LOGIN_FAILURE = 'API_LOGIN_FAILURE';
+
+export const SET_LANGUAGE = 'SET_LANGUAGE';
+export const LOGGED = 'LOGGED';
