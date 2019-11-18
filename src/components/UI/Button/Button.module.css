@@ -1,0 +1,51 @@
+@import '../../../css/main.css';
+@import '../../../css/colors.css';
+
+.button {
+    width: auto;
+    max-width: 10.5rem;
+    height: 2.3125rem;
+
+    border-radius: 20px;
+    opacity: 1;
+ 
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 600;
+}
+
+.button:active {
+    background: rgb(0, 143, 81);
+}
+
+.primary {
+    border-style: none;
+    background: #00DC7D 0% 0% no-repeat padding-box;
+    color: #fff;
+}
+
+.secondary {
+    border-style: none;
+    background: lightseagreen 0% 0% no-repeat padding-box;
+    color: black;
+}
+
+.loader {
+    padding: 0 0 0 0.518125rem;
+    width: 1.454375rem;
+
+    align-self: flex-start;
+    flex-basis: 17%;
+}
+
+.loaderDiv {
+    display: flex;
+    flex-direction: row;
+}
+
+.valueDiv {
+    justify-content: center;
+    text-align: center;
+    align-self: center;
+    flex-basis: 100%;
+}

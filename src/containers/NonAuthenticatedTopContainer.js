@@ -3,7 +3,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter, Switch, Route, Redirect } from 'react-router-dom';
 import AppComponentContext from '../contexts/AppComponentContext';
-// import AuthenticatedNavBar from '../components/Authenticated/AuthenticatedNavBar/AuthenticatedNavBar';
+import NonAuthenticatedNavBar from '../components/NonAuthenticated/NonAuthenticatedNavBar/NonAuthenticatedNavBar';
+import LoginContainer from './LoginContainer';
 
 class AuthenticatedIndexContainer extends Component {
 
@@ -11,9 +12,9 @@ class AuthenticatedIndexContainer extends Component {
     console.log('AuthenticatedTopContainer render()', this.props, this.state);
     return (
       <div>
-          ne logovan
-        {/* <AuthenticatedNavBar /> */}
+        <NonAuthenticatedNavBar />
         <Switch>
+          <Route path='/login' component={LoginContainer} />
           {/* <Route path="/dashboard" component={Dashboard} />
           <Route path="/vehicleOffers" component={VehicleOffers} />
           <Route path="/cargoOffers" component={CargoOffers} />

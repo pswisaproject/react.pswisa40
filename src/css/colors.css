@@ -1,0 +1,14 @@
+:root {
+    /* light theme colors */
+    --light-color: green;
+    --light-bg-color: white;
+    --light-primary-button-color: white;
+    --light-secondary-button-color: green;
+
+    
+    /* dark theme colors */ 
+    --dark-color: black;
+    --dark-bg-color: gray;
+    --dark-primary-button-color: gray;
+    --dark-secondary-button-color: black;
+}
