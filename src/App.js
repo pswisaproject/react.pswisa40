@@ -5,9 +5,7 @@ import { connect } from 'react-redux';
 import AppComponentContext from './contexts/AppComponentContext';
 import AuthenticatedTopContainer from './containers/AuthenticatedTopContainer';
 import NonAuthenticatedTopContainer from './containers/NonAuthenticatedTopContainer';
-import strings from './assets/localization/index';
 
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -36,8 +34,6 @@ class App extends Component {
 function mapStateToProps(state) {
   return {
     loggedIn: state.login.loggedIn
-    // theme: state.theme.themeName,
-    // language: state.language.selectedLanguage
   };
 }
 function mapDispatchToProps(dispatch) {

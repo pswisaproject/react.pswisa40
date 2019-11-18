@@ -1,0 +1,36 @@
+/** This CSS is far from good */
+
+.inputDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+    margin-top: 0.5rem;
+  
+    height: 45.63px;
+    width: max-content;
+  }
+  
+  .inputField {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #5A5FEC;
+    opacity: 1;
+  
+    align-self: auto;
+  }
+  
+  .inputField:focus {
+    outline: none;
+  }
+  
+  .inputLabel {
+    position: relative;
+    padding: 0.2rem 0 0 0;
+  
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 600;
+  
+    align-self: flex-start;
+  }

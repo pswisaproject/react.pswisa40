@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    height: fit-content;
+    width: auto;
+  }
+  
+  .errorDiv {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  
+  .errorItem {
+    list-style-type: none;
+    display: flex;
+    align-self: center;
+  
+    color: red;
+  
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+  
+    margin-bottom: 0.5rem;
+  }
+  
+  .errorLabel {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  
+  
