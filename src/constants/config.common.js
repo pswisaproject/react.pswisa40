@@ -32,8 +32,8 @@ const makeConfig = (newConfig) => {
     resConfig.API_URL = 'https://api.pswisa40/' + resConfig.API_VERSION + '/';
     resConfig.WS_API_URL = 'wss://ws.pswisa40/' + resConfig.NBS_API_VERSION + '/';
   } else if (resConfig.ENVIRONMENT === 'dev') {
-    resConfig.API_URL = 'http://api.pswisa40/' + resConfig.API_VERSION + '/';
-    resConfig.WS_API_URL = 'wss://api.pswisa40/' + resConfig.NBS_API_VERSION + '/';
+    resConfig.API_URL = 'http://api.pswisa40/';
+    resConfig.WS_API_URL = 'wss://api.pswisa40/';
   }
   return resConfig;
 };

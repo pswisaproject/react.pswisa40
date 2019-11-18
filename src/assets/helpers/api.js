@@ -16,7 +16,7 @@ export default async function api (url, data, method) {
     console.log(url, data, method);
     const result = await axios.post(url, data);
     console.log('POST received: ', result);
-    if (result.data.status === 'success') { // pitati sumija da li treba ovako, ili npr. result.status === 200 ili slicno
+    if (result.data.status === 'success') {
       return result.data;
     } else {
       throw result.data;
