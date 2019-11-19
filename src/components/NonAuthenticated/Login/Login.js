@@ -8,7 +8,7 @@ import AppComponentContext from '../../../contexts/AppComponentContext';
 /**
  * error codes for form
  */
-const FORM_ERROR_CODES = [11006, 11007, 11008, 11009];
+const FORM_ERROR_CODES = [1101, 1102, 1103, 1104, 1201, 1202];
 
 class Login extends Component {
   state = { cssUsernameErrorStyleShow: false, cssPasswordErrorStyleShow: false };
