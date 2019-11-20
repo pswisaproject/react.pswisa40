@@ -15,12 +15,7 @@ class AuthenticatedIndexContainer extends Component {
         <NonAuthenticatedNavBar />
         <Switch>
           <Route path='/login' component={LoginContainer} />
-          {/* <Route path="/dashboard" component={Dashboard} />
-          <Route path="/vehicleOffers" component={VehicleOffers} />
-          <Route path="/cargoOffers" component={CargoOffers} />
-          <Route path="/warehouseOffers" component={WarehouseOffers} />
-          <Route path="/logout" component={Logout} />
-          <Redirect to="/dashboard" /> */}
+          <Redirect to="/login" />
         </Switch>
       </div>
     );

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from './NonAuthenticatedNavBar.module.css';
 import { nonAuthenticatedRoutes as paths } from '../../../constants/paths';
 
-class NavBar extends Component {
+class NonAuthenticatedNavBar extends Component {
   render () {
     return (
       <div className={styles.NavBar}>
@@ -25,4 +25,4 @@ class NavBar extends Component {
   }
 }
 
-export default NavBar;
+export default NonAuthenticatedNavBar;

@@ -12,7 +12,6 @@ class App extends Component {
   static contextType = AppComponentContext;
 
   render() {
-    // strings.setLanguage(this.props.language);
     return (
       <AppComponentContext.Provider value={{  }}>
         {this.layoutSelector()}
@@ -22,11 +21,7 @@ class App extends Component {
 
   layoutSelector() {
     let { loggedIn } = this.props;
-    const layout = !loggedIn ? (
-      <NonAuthenticatedTopContainer />
-    ) : (
-        <div>Logged in</div>
-      );
+    const layout = loggedIn ? <AuthenticatedTopContainer /> : <NonAuthenticatedTopContainer />;
     return layout;
   }
 }

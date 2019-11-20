@@ -6,7 +6,8 @@ const nonAuthenticatedRoutes = {
   };
   
   const authenticatedRoutes = {
-    LOGOUT: '/logout'
+    LOGOUT: '/logout',
+    DASHBOARD: '/dashboard'
   }
   
   export {
