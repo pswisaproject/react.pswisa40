@@ -8,24 +8,36 @@ import AuthenticatedNavBar from '../components/Authenticated/AuthenticatedNavBar
 
 class AuthenticatedIndexContainer extends Component {
   render () {
-    console.log('AuthenticatedTopContainer render()');
+    console.log('AuthenticatedTopContainer render()', this.props.response.data['changedPassword']);
     return (
-      <div>
-        <AuthenticatedNavBar />
-        <Switch>
-          <Route path="/dashboard" component={Dashboard} />
-          {/* redirect to some page if no match found */}
-          <Redirect to="/dashboard" />
-        </Switch>
-      </div>
+      this.changedPasswordCheck()
     );
+  }
+
+  changedPasswordCheck () {
+    if (this.props.response.data['changedPassword'] == 0) {
+      return (
+        <div>You must change your password</div>
+      );
+    }
+    else {
+      return (
+        <div>
+          <AuthenticatedNavBar />
+          <Switch>
+            <Route path="/dashboard" component={Dashboard} />
+            <Redirect to="/dashboard" />
+          </Switch>
+        </div>
+      );
+    }
   }
 }
 AuthenticatedIndexContainer.contextType = AppComponentContext;
 
 function mapStateToProps (state) {
   return {
-      //
+      response: state.login.response
   };
 }
 
