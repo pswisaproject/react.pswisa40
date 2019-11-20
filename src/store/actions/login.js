@@ -41,7 +41,7 @@ function loginError (error) {
 }
 
 export default function login (data) {
-  const url = 'user/login';
+  const url = 'users/login';
   const method = 'POST';
 
   return dispatch => {
