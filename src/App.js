@@ -25,7 +25,7 @@ class App extends Component {
     const layout = !loggedIn ? (
       <NonAuthenticatedTopContainer />
     ) : (
-        <AuthenticatedTopContainer />
+        <div>Logged in</div>
       );
     return layout;
   }

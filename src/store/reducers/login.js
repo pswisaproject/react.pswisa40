@@ -15,15 +15,6 @@ const initialState = {
 };
 
 export default function reducer(state = initialState, action = {}) {
-    // switch (action.type) {
-    //     case LOGGED:
-    //         return {
-    //             ...state,
-    //             loggedIn: action.loggedIn
-    //         };
-    //     default:
-    //         return state;
-    // }
     switch (action.type) {
         case API_LOGIN_REQUEST:
           return {
@@ -35,6 +26,7 @@ export default function reducer(state = initialState, action = {}) {
             status: 'request'
           };
         case API_LOGIN_SUCCESS:
+          console.log('stigao Marko na kosovo polje', action.response);
           return {
             ...state,
             loggedIn: true,
