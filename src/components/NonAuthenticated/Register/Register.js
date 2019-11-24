@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styles from './Register.module.css';
 import Input from '../../UI/FormElements/Input/Input';
-import Textarea from '../../UI/FormElements/Textarea/Textarea';
 import Button from '../../UI/Button/Button';
 import { prepareInputErrorCodesFromApiResponse } from '../../../assets/helpers/common';
 
@@ -26,7 +25,7 @@ class Register extends Component {
   }
 
   componentDidMount () {
-    // this.inputVatinRef.current.focus();
+    this.inputEmail.current.focus();
     if (this.props.isError) {
       this.setState({
         // set style errors true
@@ -46,72 +45,72 @@ class Register extends Component {
   render () {
     return (
       <div className={styles.RegisterWrapper}>
-					<div className={styles.RegisterLabel}>Registration Form</div>
-					<Input
-						ref={this.inputEmailRef}
-						type='email'
-						label={'Email address'}
-						onFocus={() => this.handleOnFocus(this.inputEmailRef)}
-						placeholder={'Enter your email address'}
-						onKeyDownPress={(e) => e.key === 'Enter' && this.inputSubmitButtonRef.current.click()}
+				<div className={styles.RegisterLabel}>Registration Form</div>
+				<Input
+					ref={this.inputEmailRef}
+					type='email'
+					label={'Email address'}
+					onFocus={() => this.handleOnFocus(this.inputEmailRef)}
+					placeholder={'Enter your email address'}
+					onKeyDownPress={(e) => e.key === 'Enter' && this.inputSubmitButtonRef.current.click()}
+				/>
+				<Input
+					ref={this.inputPasswordRef}
+					type='password'
+					label='Password'
+					onFocus={() => this.handleOnFocus(this.inputPasswordRef)}
+					placeholder='Enter your password'
+					onKeyDownPress={(e) => e.key === 'Enter' && this.inputSubmitButtonRef.current.click()}
 					/>
-					<Input
-						ref={this.inputPasswordRef}
-						type='password'
-						label='Password'
-						onFocus={() => this.handleOnFocus(this.inputPasswordRef)}
-						placeholder='Enter your password'
-						onKeyDownPress={(e) => e.key === 'Enter' && this.inputSubmitButtonRef.current.click()}
-						/>
-					<Input
-						ref={this.inputFirstNameRef}
-						label='First Name'
-						onFocus={() => this.handleOnFocus(this.inputFirstNameRef)}
-						placeholder='Enter your first name'
-						onKeyDownPress={(e) => e.key === 'Enter' && this.inputSubmitButtonRef.current.click()}
-					/>
-					<Input
-						ref={this.inputLastNameRef}
-						label='Last Name'
-						onFocus={() => this.handleOnFocus(this.inputLastNameRef)}
-						placeholder='Enter your last name'
-						onKeyDownPress={(e) => e.key === 'Enter' && this.inputSubmitButtonRef.current.click()}
-					/>
-					<Input
-						ref={this.inputAddressRef}
-						label='Address'
-						onFocus={() => this.handleOnFocus(this.inputAddressRef)}
-						placeholder='Input your address'
-						onKeyDownPress={(e) => e.key === 'Enter' && this.inputSubmitButtonRef.current.click()}
-					/>
-					<Input
-						ref={this.inputCityRef}
-						label='City of residence'
-						onFocus={() => this.handleOnFocus(this.inputCityRef)}
-						placeholder='Input your city'
-						onKeyDownPress={(e) => e.key === 'Enter' && this.inputSubmitButtonRef.current.click()}
-					/>
-					<Input
-						ref={this.inputCountryRef}
-						label='Country'
-						onFocus={() => this.handleOnFocus(this.inputCountryRef)}
-						placeholder='Input your country'
-						onKeyDownPress={(e) => e.key === 'Enter' && this.inputSubmitButtonRef.current.click()}
-					/>
-					<Input
-						ref={this.inputPhoneRef}
-						label='Phone number'
-						onFocus={() => this.handleOnFocus(this.inputPhoneRef)}
-						placeholder='Enter your phone number'
-						onKeyDownPress={(e) => e.key === 'Enter' && this.inputSubmitButtonRef.current.click()}
-					/>
-					<Input
-						ref={this.inputHealthcareIdRef}
-						label='Healthcare ID'
-						onFocus={() => this.handleOnFocus(this.inputHealthcareIdRef)}
-						placeholder='Enter your healthcare ID'
-						onKeyDownPress={(e) => e.key === 'Enter' && this.inputSubmitButtonRef.current.click()}
-					/>
+				<Input
+					ref={this.inputFirstNameRef}
+					label='First Name'
+					onFocus={() => this.handleOnFocus(this.inputFirstNameRef)}
+					placeholder='Enter your first name'
+					onKeyDownPress={(e) => e.key === 'Enter' && this.inputSubmitButtonRef.current.click()}
+				/>
+				<Input
+					ref={this.inputLastNameRef}
+					label='Last Name'
+					onFocus={() => this.handleOnFocus(this.inputLastNameRef)}
+					placeholder='Enter your last name'
+					onKeyDownPress={(e) => e.key === 'Enter' && this.inputSubmitButtonRef.current.click()}
+				/>
+				<Input
+					ref={this.inputAddressRef}
+					label='Address'
+					onFocus={() => this.handleOnFocus(this.inputAddressRef)}
+					placeholder='Input your address'
+					onKeyDownPress={(e) => e.key === 'Enter' && this.inputSubmitButtonRef.current.click()}
+				/>
+				<Input
+					ref={this.inputCityRef}
+					label='City of residence'
+					onFocus={() => this.handleOnFocus(this.inputCityRef)}
+					placeholder='Input your city'
+					onKeyDownPress={(e) => e.key === 'Enter' && this.inputSubmitButtonRef.current.click()}
+				/>
+				<Input
+					ref={this.inputCountryRef}
+					label='Country'
+					onFocus={() => this.handleOnFocus(this.inputCountryRef)}
+					placeholder='Input your country'
+					onKeyDownPress={(e) => e.key === 'Enter' && this.inputSubmitButtonRef.current.click()}
+				/>
+				<Input
+					ref={this.inputPhoneRef}
+					label='Phone number'
+					onFocus={() => this.handleOnFocus(this.inputPhoneRef)}
+					placeholder='Enter your phone number'
+					onKeyDownPress={(e) => e.key === 'Enter' && this.inputSubmitButtonRef.current.click()}
+				/>
+				<Input
+					ref={this.inputHealthcareIdRef}
+					label='Healthcare ID'
+					onFocus={() => this.handleOnFocus(this.inputHealthcareIdRef)}
+					placeholder='Enter your healthcare ID'
+					onKeyDownPress={(e) => e.key === 'Enter' && this.inputSubmitButtonRef.current.click()}
+				/>
 				<Button
 					ref={this.inputSubmitButtonRef}
 					className={styles.RegisterButton}
