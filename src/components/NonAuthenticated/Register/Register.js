@@ -2,13 +2,22 @@ import React, { Component } from 'react';
 import styles from './Register.module.css';
 import Input from '../../UI/FormElements/Input/Input';
 import Button from '../../UI/Button/Button';
-// import { prepareInputErrorCodesFromApiResponse } from '../../../assets/helpers/common';
+import { prepareInputErrorCodesFromApiResponse } from '../../../assets/helpers/common';
 
-// const FORM_ERROR_CODES = [];
+const FORM_ERROR_CODES = [];
 
 class Register extends Component {
+	// WILL BE USED FOR ERROR HANDLING
   state = {
-    // style errors
+    emailError: true,
+		passwordError: true,
+		firstNameError: true,
+		lastNameError: true,
+		addressError: true,
+		cityError: true,
+		countryError: true,
+		phoneError: true,
+		healthcareIdError: true,
     apiResponseErrors: []
   };
 
@@ -16,6 +25,7 @@ class Register extends Component {
     super(props);
 		this.inputEmailRef = React.createRef();
 		this.inputPasswordRef = React.createRef();
+		this.inputPasswordConfirmation = React.createRef();
 		this.inputFirstNameRef = React.createRef();
 		this.inputLastNameRef = React.createRef();
 		this.inputAddressRef = React.createRef();
@@ -27,10 +37,19 @@ class Register extends Component {
   }
 
   componentDidMount () {
-    this.inputEmailRef.current.focus();
+		this.inputEmailRef.current.focus();
+		// WILL BE USED FOR ERROR HANDLING
     if (this.props.isError) {
       this.setState({
-        // set style errors true
+        emailError: true,
+				passwordError: true,
+				firstNameError: true,
+        lastNameError: true,
+        addressError: true,
+        cityError: true,
+        countryError: true,
+        phoneError: true,
+        healthcareIdError: true,
         apiResponseErrors: this.props.apiErrors.errors
       });
     }
@@ -41,6 +60,7 @@ class Register extends Component {
       this.setState({
         apiResponseErrors: this.props.apiErrors.errors
       });
+      this.checkInputFieldErrors(FORM_ERROR_CODES, this.props.apiErrors.errors);
     }
   }
 
@@ -63,7 +83,15 @@ class Register extends Component {
 					onFocus={() => this.handleOnFocus(this.inputPasswordRef)}
 					placeholder='Enter your password'
 					onKeyDownPress={(e) => e.key === 'Enter' && this.inputSubmitButtonRef.current.click()}
-					/>
+				/>
+				<Input
+					ref={this.inputPasswordConfirmation}
+					type='password'
+					label='Password Confirmation'
+					onFocus={() => this.handleOnFocus(this.inputPasswordConfirmation)}
+					placeholder='Confirm your password'
+					onKeyDownPress={(e) => e.key === 'Enter' && this.inputSubmitButtonRef.current.click()}
+				/>
 				<Input
 					ref={this.inputFirstNameRef}
 					label='First Name'
@@ -126,7 +154,8 @@ class Register extends Component {
 
   handleButtonClick = (e) => {
 		const email = this.inputEmailRef.current.value;
-    const password = this.inputPasswordRef.current.value;
+		const password = this.inputPasswordRef.current.value;
+		const passwordConfirmation = this.inputPasswordConfirmation.current.value;
     const firstName = this.inputFirstNameRef.current.value;
 		const lastName = this.inputLastNameRef.current.value;
 		const address = this.inputAddressRef.current.value;
@@ -134,6 +163,12 @@ class Register extends Component {
 		const country = this.inputCountryRef.current.value;
 		const phone = this.inputPhoneRef.current.value;
 		const healthcareId = this.inputHealthcareIdRef.current.value;
+
+		// TEMPORARY
+		if (password !== passwordConfirmation) { 
+			console.log('Passwords do not match!');
+			return;
+		}
 
     this.props.handleSubmitButtonClick({ email, password, firstName, lastName, address, city, country, phone, healthcareId });
   }
@@ -150,8 +185,36 @@ class Register extends Component {
     this.removeErrorCssStyles(ref);
   }
 
+	// WILL BE USED LATER FOR ERROR HANDLING
   removeErrorCssStyles = (ref) => {
     switch (ref) {
+			case this.inputEmailRef: 
+				this.setState({ emailError: false });
+				break;
+			case this.inputPasswordRef: 
+				this.setState({ passwordError: false });
+				break;
+			case this.inputFirstNameRef:
+        this.setState({ firstNameError: false });
+        break;
+      case this.inputLastNameRef:
+        this.setState({ lastNameError: false });
+        break;
+      case this.inputAddressRef:
+        this.setState({ addressError: false });
+        break;
+      case this.inputCityRef:
+        this.setState({ cityError: false });
+        break;
+      case this.inputCountryRef:
+        this.setState({ countryError: false });
+        break;
+      case this.inputPhoneRef:
+        this.setState({ phoneError: false });
+        break;
+      case this.inputHealthcareIdRef:
+        this.setState({ healthcareId: false });
+        break;
       default:
         break;
     }
