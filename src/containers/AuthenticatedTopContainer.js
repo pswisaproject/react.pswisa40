@@ -15,7 +15,7 @@ class AuthenticatedIndexContainer extends Component {
   }
 
   changedPasswordCheck () {
-    if (this.props.response.data['changedPassword'] == 0) {
+    if (this.props.response.data['changedPassword'] === 0) {
       return (
         <div>You must change your password</div>
       );
