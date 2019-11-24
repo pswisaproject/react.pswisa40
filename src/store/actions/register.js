@@ -24,7 +24,7 @@ function registerError (error) {
 }
 
 export default function register (data) {
-  const url = 'company/register';
+  const url = 'users/register';
   const method = 'POST';
 
   return dispatch => {
