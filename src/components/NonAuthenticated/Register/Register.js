@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import styles from './Register.module.css';
 import Input from '../../UI/FormElements/Input/Input';
 import Button from '../../UI/Button/Button';
-import { prepareInputErrorCodesFromApiResponse } from '../../../assets/helpers/common';
+// import { prepareInputErrorCodesFromApiResponse } from '../../../assets/helpers/common';
 
-const FORM_ERROR_CODES = [];
+// const FORM_ERROR_CODES = [];
 
 class Register extends Component {
   state = {
@@ -21,11 +21,13 @@ class Register extends Component {
 		this.inputAddressRef = React.createRef();
 		this.inputCityRef = React.createRef();
 		this.inputCountryRef = React.createRef();
+		this.inputPhoneRef = React.createRef();
+		this.inputHealthcareIdRef = React.createRef();
 		this.inputSubmitButtonRef = React.createRef();
   }
 
   componentDidMount () {
-    this.inputEmail.current.focus();
+    this.inputEmailRef.current.focus();
     if (this.props.isError) {
       this.setState({
         // set style errors true

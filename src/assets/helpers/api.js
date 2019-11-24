@@ -13,6 +13,7 @@ export default async function api (url, data, method) {
   }
 
   if (method === 'POST') {
+    console.log('POST sent: ', data);
     const result = await axios.post(url, data);
     console.log('POST received: ', result);
     if (result.data.status === 'success') {

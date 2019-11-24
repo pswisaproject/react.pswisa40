@@ -16,12 +16,12 @@ class RegisterContainer extends Component {
     );
   }
 
-  handleSubmitButtonClick = ({}) => {
-    this.onHandleRegister();
+  handleSubmitButtonClick = ({ email, password, firstName, lastName, address, city, country, phone, healthcareId }) => {
+    this.onHandleRegister(email, password, firstName, lastName, address, city, country, phone, healthcareId);
   }
 
-  onHandleRegister = () => {
-    const data = {};
+  onHandleRegister = (email, password, firstName, lastName, address, city, country, phone, healthcareId) => {
+    const data = { email, password, firstName, lastName, address, city, country, phone, id: healthcareId };
     this.props.registerAction(data);
   }
 }
