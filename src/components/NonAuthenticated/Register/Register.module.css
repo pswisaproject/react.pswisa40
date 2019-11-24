@@ -1,0 +1,31 @@
+.RegisterWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+    margin: 3rem 5rem;
+  
+    align-content: flex-start;
+  }
+  
+  .RegisterLabel {
+      font-family: 'Open Sans', Arial, sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+  
+      display: flex;
+      margin-bottom: 3rem;
+  }
+  
+  .RegisterWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  Button {
+    margin: 1.5rem 0;
+  }
+  
+  .ElError {
+    border-color: red;
+  }

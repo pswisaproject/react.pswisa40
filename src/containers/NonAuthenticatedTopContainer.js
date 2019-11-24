@@ -5,6 +5,7 @@ import { withRouter, Switch, Route, Redirect } from 'react-router-dom';
 import AppComponentContext from '../contexts/AppComponentContext';
 import NonAuthenticatedNavBar from '../components/NonAuthenticated/NonAuthenticatedNavBar/NonAuthenticatedNavBar';
 import LoginContainer from './LoginContainer';
+import RegisterContainer from './RegisterContainer';
 
 class AuthenticatedIndexContainer extends Component {
 
@@ -15,6 +16,7 @@ class AuthenticatedIndexContainer extends Component {
         <NonAuthenticatedNavBar />
         <Switch>
           <Route path='/login' component={LoginContainer} />
+          <Route path='/register' component={RegisterContainer} />
           <Redirect to="/login" />
         </Switch>
       </div>

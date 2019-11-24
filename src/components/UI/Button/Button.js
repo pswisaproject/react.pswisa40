@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import styles from '../Button/Button.module.css';
 import Loader from '../Loader/Loader';
 
-const Button = (props) => {
+const Button = React.forwardRef((props, ref) => {
   const buttonStyle = props.type === 'primary' ? styles.primary : styles.secondary;
   return (
     <button
+      ref={ref}
       className={[styles.button, buttonStyle].join(' ')}
       style={props.buttonInlineStyle}
       name={props.name}
@@ -21,7 +22,7 @@ const Button = (props) => {
       </div>
     </button>
   );
-};
+});
 
 Button.propTypes = {
   name: PropTypes.string,
