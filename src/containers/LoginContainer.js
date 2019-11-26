@@ -28,7 +28,6 @@ class LoginContainer extends Component {
 
 function mapStateToProps (state) {
   return {
-    // loggedIn: state.session.loggedInStatus,
     loginApiResponse: state.login
   };
 }
