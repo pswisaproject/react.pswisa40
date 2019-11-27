@@ -2,12 +2,14 @@ import { combineReducers } from 'redux';
 import login from './login';
 import register from './register';
 import session from './sessionData';
+import patientInfo from './getPatientInfo';
 
 const appReducer = combineReducers({
   /* application top-level reducers */
   login,
   register,
-  session
+  session,
+  patientInfo
 //   theme,
 //   language,
 //   loggedInStatus
