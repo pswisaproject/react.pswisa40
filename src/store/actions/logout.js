@@ -1,8 +1,10 @@
 import {
     LOGOUT
   } from '../../constants/actions';
+import { deleteReduxStateFromStorage } from '../../assets/helpers/utils';
     
   function setLoggedOut () {
+    deleteReduxStateFromStorage();
     return {
       type: LOGOUT
     };

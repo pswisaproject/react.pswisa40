@@ -56,7 +56,7 @@ export function deepCopy (obj) {
   }
   
   export function deleteReduxStateFromStorage () {
-    localStorage.setItem('__REDUX_STATE__', JSON.stringify({}));
+    localStorage.clear();
   }
   
   export function getScrollState () {
