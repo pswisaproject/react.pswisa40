@@ -10,20 +10,21 @@ class DashboardContainer extends Component {
   }
 
   componentDidMount() {
-    this.setState({
-      patientInfo: this.props.getPatientInfo(this.props.session.Ht)
-    });
+    this.getPatientInfo().then(
+      result => this.setState({
+        patientInfo: result
+      })
+    );
   }
 
   render () {
-    console.log(this.props.session.Ht, 'HT');
     return <Dashboard 
-      patientInfo={this.props.patientInfo.response}
+      patientInfo={this.props.patientInfo.response.data}
     />;
   }
 
   getPatientInfo = () => {
-
+    return this.props.getPatientInfo(this.props.session);
   }
 }
 
