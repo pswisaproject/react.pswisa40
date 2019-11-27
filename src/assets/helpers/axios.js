@@ -79,7 +79,7 @@ class AxiosService {
     return request;
   }
 
-  async get (path) {
+  async get (path, headerData) {
     const request = await this.service.request({
       method: 'GET',
       url: path,
@@ -93,7 +93,7 @@ class AxiosService {
     return request;
   }
 
-  async delete (path) {
+  async delete (path, headerData) {
     const request = await this.service.request({
       method: 'DELETE',
       url: path,
