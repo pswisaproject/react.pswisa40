@@ -47,7 +47,7 @@ class AxiosService {
     return formData;
   }
 
-  async post (path, data) {
+  async post (path, data, headerData) {
     const formData = this.prepareFormData(data);
     const request = await this.service.request({
       url: path,
@@ -57,14 +57,14 @@ class AxiosService {
       data: formData,
       headers: {
         ...this.baseHeadersOption,
-        Ht: 'nekiTEstHJash',
+        Ht: headerData.Ht,
         'Content-Type': 'multipart/form-data'
       }
     });
     return request;
   }
 
-  async put (path, data) {
+  async put (path, data, headerData) {
     const request = await this.service.request({
       method: 'put',
       url: path,
@@ -73,7 +73,7 @@ class AxiosService {
       data,
       headers: {
         ...this.baseHeadersOption,
-        Ht: 'nekiTEstHJash'
+        Ht: headerData.Ht,
       }
     });
     return request;
@@ -87,7 +87,7 @@ class AxiosService {
       responseType: 'json',
       headers: {
         ...this.baseHeadersOption,
-        Ht: 'nekiTEstHJash'
+        Ht: headerData.Ht,
       }
     });
     return request;
@@ -101,7 +101,7 @@ class AxiosService {
       responseType: 'json',
       headers: {
         ...this.baseHeadersOption,
-        Ht: 'nekiTEstHJash'
+        Ht: headerData.Ht,
       }
     });
     return request;
