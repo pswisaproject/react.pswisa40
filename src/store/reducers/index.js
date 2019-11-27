@@ -1,11 +1,13 @@
 import { combineReducers } from 'redux';
 import login from './login';
 import register from './register';
+import session from './sessionData';
 
 const appReducer = combineReducers({
   /* application top-level reducers */
   login,
-  register
+  register,
+  session
 //   theme,
 //   language,
 //   loggedInStatus

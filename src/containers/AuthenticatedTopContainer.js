@@ -8,7 +8,7 @@ import AuthenticatedNavBar from '../components/Authenticated/AuthenticatedNavBar
 
 class AuthenticatedIndexContainer extends Component {
   render () {
-    console.log('AuthenticatedTopContainer render()', this.props.response.data['changedPassword']);
+    console.log('AuthenticatedTopContainer render()', this.props.session);
     return (
       this.changedPasswordCheck()
     );
@@ -37,7 +37,8 @@ AuthenticatedIndexContainer.contextType = AppComponentContext;
 
 function mapStateToProps (state) {
   return {
-      response: state.login.response
+      response: state.login.response,
+      session: state.session
   };
 }
 

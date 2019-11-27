@@ -27,10 +27,10 @@ function loginError (error) {
 export default function login (data) {
   const url = 'users/login';
   const method = 'POST';
-
+  const headerData = {};
   return dispatch => {
     dispatch(loginRequest());
-    return api(url, data, method)
+    return api(url, data, method, headerData)
       .then(response => dispatch(loginSuccess(response)))
       .catch(error => dispatch(loginError(error)));
   };
