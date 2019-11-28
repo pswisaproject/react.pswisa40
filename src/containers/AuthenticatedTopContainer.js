@@ -5,22 +5,23 @@ import { withRouter, Switch, Route, Redirect } from 'react-router-dom';
 import AppComponentContext from '../contexts/AppComponentContext';
 import Dashboard from '../components/Authenticated/Dashboard/Dashboard';
 import AuthenticatedNavBar from '../components/Authenticated/AuthenticatedNavBar/AuthenticatedNavBar';
+import ChangePasswordContainer from './ChangePasswordContainer';
 
 class AuthenticatedIndexContainer extends Component {
   render () {
-    console.log('AuthenticatedTopContainer render()', this.props.session);
+    console.log('AuthenticatedTopContainer render()', this.props.session, this.props.response.data);
     return (
       this.changedPasswordCheck()
     );
   }
 
   changedPasswordCheck () {
-    if (this.props.response.data['changedPassword'] === 0) {
+    if (this.props.response.data['changedPassword'] == 0) {
       return (
-        <div>You must change your password</div>
+        <ChangePasswordContainer />
       );
     }
-    else {
+    else if (this.props.response.data['changedPassword'] == 1) {
       return (
         <div>
           <AuthenticatedNavBar />
