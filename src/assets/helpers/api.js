@@ -1,9 +1,9 @@
 import axios from './axios';
 
-export default async function api (url, data, method) {
+export default async function api (url, data, method, headerData = null) {
   // try {
   if (method === 'GET') {
-    const result = await axios.get(url);
+    const result = await axios.get(url, headerData);
     console.log('GET received: ', result.success);
     if (result.data.status === 'success') {
       return result.data;
@@ -14,7 +14,7 @@ export default async function api (url, data, method) {
 
   if (method === 'POST') {
     console.log('POST sent: ', data);
-    const result = await axios.post(url, data);
+    const result = await axios.post(url, data, headerData);
     console.log('POST received: ', result);
     if (result.data.status === 'success') {
       return result.data;
@@ -25,7 +25,7 @@ export default async function api (url, data, method) {
 
   if (method === 'PUT') {
     console.log(url, data, method);
-    const result = await axios.put(url, data);
+    const result = await axios.put(url, data, headerData);
     console.log('PUT received: ', result);
 
     if (result.data.status === 'success') {
@@ -36,7 +36,7 @@ export default async function api (url, data, method) {
   }
 
   if (method === 'DELETE') {
-    const result = await axios.deconste(url);
+    const result = await axios.deconste(url, headerData);
     console.log('DELETE received: ', result);
     if (result.data.status === 'success') {
       return result.data;

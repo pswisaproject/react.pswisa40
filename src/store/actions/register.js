@@ -26,10 +26,10 @@ function registerError (error) {
 export default function register (data) {
   const url = 'users/register';
   const method = 'POST';
-
+  const headerData = {};
   return dispatch => {
     dispatch(registerRequest());
-    return api(url, data, method)
+    return api(url, data, method, headerData)
       .then(response => dispatch(registerSuccess(response)))
       .catch(error => dispatch(registerError(error)));
   };
