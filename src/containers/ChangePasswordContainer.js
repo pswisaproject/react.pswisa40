@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { logout } from '../store/actions/logout';
+import editUser from '../store/actions/editUser';
 import Input from '../components/UI/FormElements/Input/Input';
 import Button from '../components/UI/Button/Button';
 import styles from '../components/NonAuthenticated/Login/Login.module.css';
@@ -57,19 +58,22 @@ class ChangePasswordContainer extends Component {
   }
 
   handleButtonClick = () => {
-    console.log('change the password please', this.inputPasswordRef.current.value, this.inputPasswordRepeatRef.current.value);
+    console.log('change the password please', this.props.ht, this.inputPasswordRef.current.value, this.inputPasswordRepeatRef.current.value);
+    this.props.editUser({} ,this.props.ht);
   }
 }
 
 function mapStateToProps (state) {
   return {
+    ht: state.session.Ht
   };
 }
 
 function mapDispatchToProps (dispatch) {
   return bindActionCreators(
     {
-      logout
+      logout,
+      editUser
     }, dispatch);
 }
 

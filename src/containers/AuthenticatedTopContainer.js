@@ -9,19 +9,19 @@ import ChangePasswordContainer from './ChangePasswordContainer';
 
 class AuthenticatedIndexContainer extends Component {
   render () {
-    console.log('AuthenticatedTopContainer render()', this.props.session, this.props.response.data);
+    // console.log('AuthenticatedTopContainer render()', this.props.changedPassword, this.props.session, this.props.response.data);
     return (
       this.changedPasswordCheck()
     );
   }
 
   changedPasswordCheck () {
-    if (this.props.response.data['changedPassword'] == 0) {
+    if (this.props.changedPassword == 0) {
       return (
         <ChangePasswordContainer />
       );
     }
-    else if (this.props.response.data['changedPassword'] == 1) {
+    else if (this.props.changedPassword == 1) {
       return (
         <div>
           <AuthenticatedNavBar />
@@ -39,6 +39,7 @@ AuthenticatedIndexContainer.contextType = AppComponentContext;
 function mapStateToProps (state) {
   return {
       response: state.login.response,
+      changedPassword: state.login.changedPassword,
       session: state.session
   };
 }
