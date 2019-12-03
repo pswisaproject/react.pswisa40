@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter, Switch, Route, Redirect } from 'react-router-dom';
 import AppComponentContext from '../contexts/AppComponentContext';
-import Dashboard from '../components/Authenticated/Dashboard/Dashboard';
+import DashboardContainer from '../containers/DashboardContainer';
 import AuthenticatedNavBar from '../components/Authenticated/AuthenticatedNavBar/AuthenticatedNavBar';
 
 class AuthenticatedIndexContainer extends Component {
@@ -25,7 +25,7 @@ class AuthenticatedIndexContainer extends Component {
         <div>
           <AuthenticatedNavBar />
           <Switch>
-            <Route path="/dashboard" component={Dashboard} />
+            <Route path="/dashboard" component={DashboardContainer} />
             <Redirect to="/dashboard" />
           </Switch>
         </div>

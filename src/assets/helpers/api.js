@@ -1,10 +1,9 @@
 import axios from './axios';
 
 export default async function api (url, data, method, headerData = null) {
-  // try {
   if (method === 'GET') {
     const result = await axios.get(url, headerData);
-    console.log('GET received: ', result.success);
+    console.log('GET received: ', result);
     if (result.data.status === 'success') {
       return result.data;
     } else {
@@ -45,7 +44,3 @@ export default async function api (url, data, method, headerData = null) {
     }
   }
 }
-// catch (error) {
-//   throw error;
-// }
-// }
