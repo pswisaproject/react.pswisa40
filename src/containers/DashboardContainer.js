@@ -5,21 +5,13 @@ import Dashboard from '../components/Authenticated/Dashboard/Dashboard';
 import getPatientInfo from '../store/actions/getPatientInfo';
 
 class DashboardContainer extends Component {
-  state = {
-    patientInfo: {}
-  }
-
   componentDidMount() {
-    this.getPatientInfo().then(
-      result => this.setState({
-        patientInfo: result
-      })
-    );
+    this.getPatientInfo();
   }
 
   render () {
     return <Dashboard 
-      patientInfo={this.props.patientInfo.response.data}
+      patientInfo={this.props.patientInfo}
     />;
   }
 
@@ -31,7 +23,7 @@ class DashboardContainer extends Component {
 function mapStateToProps (state) {
   return {
     session: state.session,
-    patientInfo: state.patientInfo
+    patientInfo: state.patientInfo.response.data
   };
 }
 

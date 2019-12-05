@@ -17,24 +17,24 @@ export default function reducer(state = initialState, action = {}) {
 			return {
 				...state,
 				error: false,
-				response: {},
 				timestamp: new Date().toUTCString(),
+				response: {},
 				status: 'request'
 			};
 		case API_PATIENT_INFO_SUCCESS:
 			return {
 				...state,
 				error: false,
-				response: action.response,
 				timestamp: new Date().toUTCString(),
+				response: action.response,
 				status: 'success'
 			};
 		case API_PATIENT_INFO_FAILURE:
 			return {
 				...state,
 				error: true,
-				response: {},
 				timestamp: new Date().toUTCString(),
+				response: {},
 				status: 'fail'
 			};
 		default:

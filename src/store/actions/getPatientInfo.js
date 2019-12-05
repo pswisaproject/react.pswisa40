@@ -6,18 +6,18 @@ import {
     API_PATIENT_INFO_FAILURE
 } from '../../constants/actions';
 
-function loginRequest () {
+function patientInfoRequest () {
   return { type: API_PATIENT_INFO_REQUEST };
 }
 
-function loginSuccess (response) {
+function patientInfoSuccess (response) {
   return {
     type: API_PATIENT_INFO_SUCCESS,
     response
   };
 }
 
-function loginError (error) {
+function patientInfoError (error) {
   return {
     type: API_PATIENT_INFO_FAILURE,
     error
@@ -29,9 +29,9 @@ export default function getPatientInfo (headerData) {
   const data = {};
   const method = 'GET';
   return dispatch => {
-    dispatch(loginRequest());
+    dispatch(patientInfoRequest());
     return api(url, data, method, headerData)
-      .then(response => dispatch(loginSuccess(response)))
-      .catch(error => dispatch(loginError(error)));
+      .then(response => dispatch(patientInfoSuccess(response)))
+      .catch(error => dispatch(patientInfoError(error)));
   };
 }
