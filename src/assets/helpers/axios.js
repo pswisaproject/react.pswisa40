@@ -65,7 +65,6 @@ class AxiosService {
   }
 
   async put (path, data, headerData) {
-    console.log('ovde sam kao dosao sad ja');
     const formData = this.prepareFormData(data);
     const request = await this.service.request({
       url: path,

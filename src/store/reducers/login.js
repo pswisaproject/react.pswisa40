@@ -76,7 +76,7 @@ export default function reducer(state = initialState, action = {}) {
         response: action.response,
         timestamp: new Date().toUTCString(),
         status: 'success',
-        changedPassword: action.response.data['changedPassword']
+        changedPassword: true
       };
     case API_EDIT_USER_FAILURE:
       return {

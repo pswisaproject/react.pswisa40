@@ -15,7 +15,7 @@ class ChangePasswordContainer extends Component {
     this.inputPasswordRepeatRef = React.createRef();
   }
   componentDidMount () {
-    this.inputPasswordRef.current.focus();
+    // this.inputPasswordRef.current.focus();
     if (this.props.isError) {
       this.setState({ cssUsernameErrorStyleShow: true, cssPasswordErrorStyleShow: true });
     }
@@ -58,7 +58,7 @@ class ChangePasswordContainer extends Component {
   }
 
   handleButtonClick = () => {
-    console.log('change the password please', this.props.ht, this.inputPasswordRef.current.value, this.inputPasswordRepeatRef.current.value);
+    // console.log('change the password please', this.props.ht, this.inputPasswordRef.current.value, this.inputPasswordRepeatRef.current.value);
     this.props.editUser({} ,this.props.ht);
   }
 }
