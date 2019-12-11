@@ -7,7 +7,6 @@ const Dashboard = (props) => {
     return <></>
   } else
   {
-    console.log('eto me', props.medicalInfo);
     return (
       <>
         <div className={styles.container}>

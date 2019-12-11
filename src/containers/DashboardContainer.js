@@ -13,7 +13,6 @@ class DashboardContainer extends Component {
   }
 
   render () {
-    console.log('eto me ovde ', this.props);
     return <Dashboard 
       patientInfo={this.props.patientInfo}
       medicalInfo={this.props.medicalInfo}
