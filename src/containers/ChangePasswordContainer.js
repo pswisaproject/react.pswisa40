@@ -29,7 +29,7 @@ class ChangePasswordContainer extends Component {
 
   render () {
     return (
-      <>
+      <div style={{ margin: '20px' }}>
         <li onClick={() => this.props.logout()}>Logout</li>
         <Input
           style={this.state.cssUsernameErrorStyleShow ? this.handleErrorsElementStyles() : {}}
@@ -53,7 +53,7 @@ class ChangePasswordContainer extends Component {
           onClick={this.handleButtonClick}
           showLoader={this.props.isFetching}
         />
-      </>
+      </div>
     );
   }
 

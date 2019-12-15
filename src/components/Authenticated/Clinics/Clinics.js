@@ -23,6 +23,17 @@ const Clinics = (props) => {
         props.sessionData,
         {date, type, country, city, rating}
       );
+    },
+    getDoctors: function (e) {
+      let result = null;
+      if (props.searchClinicsDataResponse != null) {
+        if (props.searchClinicsDataResponse[0] != null) {
+          result = props.searchClinicsDataResponse[0].map((e, i) => {
+            return (<div key={i}>Available doctors id: {e}</div>);
+          });
+        }
+      }
+      return result;
     }
   };
 
@@ -57,6 +68,7 @@ const Clinics = (props) => {
         onClick={() => localFunctions.handleSearchBtnClick()}
         value='Search for clinics'
       />
+      {localFunctions.getDoctors()}
     </div>
   );
 };
