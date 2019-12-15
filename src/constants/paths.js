@@ -7,7 +7,8 @@ const nonAuthenticatedRoutes = {
   
   const authenticatedRoutes = {
     LOGOUT: '/logout',
-    DASHBOARD: '/dashboard'
+    DASHBOARD: '/dashboard',
+    CLINICS: '/clinics'
   }
   
   export {

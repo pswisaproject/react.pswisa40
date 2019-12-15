@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { withRouter, Switch, Route, Redirect } from 'react-router-dom';
 import AppComponentContext from '../contexts/AppComponentContext';
 import DashboardContainer from '../containers/DashboardContainer';
+import ClinicsContainer from './ClinicsContainer';
 import AuthenticatedNavBar from '../components/Authenticated/AuthenticatedNavBar/AuthenticatedNavBar';
 
 class AuthenticatedIndexContainer extends Component {
@@ -26,6 +27,7 @@ class AuthenticatedIndexContainer extends Component {
           <AuthenticatedNavBar />
           <Switch>
             <Route path="/dashboard" component={DashboardContainer} />
+            <Route path="/clinics" component={ClinicsContainer} />
             <Redirect to="/dashboard" />
           </Switch>
         </div>

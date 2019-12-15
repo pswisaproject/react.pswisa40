@@ -26,8 +26,9 @@ const Dashboard = (props) => {
         <div className={styles.container}>
           <div className={styles.patientInfoDiv}>
             <div className={styles.patientInfoDivText}>Medical Information</div>
-            <li>Prva bolest: {props.medicalInfo.diagnosis_names[0]}</li>
-            <li>Druga bolest: {props.medicalInfo.diagnosis_names[1]}</li>
+            {props.medicalInfo.diagnosis_names.map((e, i) => {
+              return <li key={i}>Diagnosed with: {e}</li>
+            })}
           </div>
           <div className={styles.medicalInfoDiv}></div>
         </div>

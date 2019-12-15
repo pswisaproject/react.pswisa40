@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Dashboard from '../components/Authenticated/Dashboard/Dashboard';
 import getPatientInfo from '../store/actions/getPatientInfo';
-// import getMedicalInfo from '../store/actions/getMedicalInfo';
 import getMedicalInfo from '../store/actions/getMedicalInfo';
 
 class DashboardContainer extends Component {
@@ -13,7 +12,7 @@ class DashboardContainer extends Component {
   }
 
   render () {
-    return <Dashboard 
+    return <Dashboard
       patientInfo={this.props.patientInfo}
       medicalInfo={this.props.medicalInfo}
     />;

@@ -15,6 +15,9 @@ class NonAuthenticatedNavBar extends Component {
             <li>
               <Link to={paths.DASHBOARD}>Dashboard</Link>
             </li>
+            <li>
+              <Link to={paths.CLINICS}>Clinics</Link>
+            </li>
             <li><a onClick={() => this.props.logout()}>Logout</a></li>
           </ul>
         </div>
