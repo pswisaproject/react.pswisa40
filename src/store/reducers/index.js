@@ -5,6 +5,7 @@ import session from './sessionData';
 import patientInfo from './getPatientInfo';
 import medicalInfo from './getMedicalInfo';
 import searchClinics from './searchClinics';
+import authNavBarState from './authNavBarState';
 
 const appReducer = combineReducers({
   /* application top-level reducers */
@@ -13,7 +14,8 @@ const appReducer = combineReducers({
   session,
   patientInfo,
   medicalInfo,
-  searchClinics
+  searchClinics,
+  authNavBarState
 //   theme,
 //   language,
 //   loggedInStatus

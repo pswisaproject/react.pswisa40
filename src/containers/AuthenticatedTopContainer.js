@@ -6,6 +6,7 @@ import AppComponentContext from '../contexts/AppComponentContext';
 import DashboardContainer from '../containers/DashboardContainer';
 import ClinicsContainer from './ClinicsContainer';
 import AuthenticatedNavBar from '../components/Authenticated/AuthenticatedNavBar/AuthenticatedNavBar';
+import AuthenticatedNavBarContainer from '../containers/AuthenticatedNavBarContainer';
 import ChangePasswordContainer from './ChangePasswordContainer';
 
 class AuthenticatedIndexContainer extends Component {
@@ -24,14 +25,14 @@ class AuthenticatedIndexContainer extends Component {
     }
     else if (this.props.changedPassword == 1) {
       return (
-        <div>
-          <AuthenticatedNavBar />
+        <>
+          <AuthenticatedNavBarContainer />
           <Switch>
             <Route path="/dashboard" component={DashboardContainer} />
             <Route path="/clinics" component={ClinicsContainer} />
             <Redirect to="/dashboard" />
           </Switch>
-        </div>
+        </>
       );
     }
   }
