@@ -5,8 +5,8 @@ const Dashboard = (props) => {
   console.log(props, 'PROPS');
   if (props.patientInfo == null || props.medicalInfo == null) {
     return <></>
-  } else
-  {
+  }
+  else {
     return (
       <>
         <div className={styles.container}>
