@@ -16,6 +16,12 @@ const app = (
     </Provider>
   );
 
+
+const rootDiv = document.getElementById('root');
+rootDiv.style.height = '100vh';
+rootDiv.style.display = 'flex';
+rootDiv.style.flexDirection = 'column';
+
 ReactDOM.render(app, document.getElementById('root'));
 
 window.addEventListener('unload', function(event) {

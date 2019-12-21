@@ -1,52 +1,167 @@
-body {
-    margin: 0;
+@import '../../../css/colors.css';
+
+.authNavBar {
+  width: 280px;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  font-size: 14px;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  transition: all 0.25s ease;
+}
+.authNavBar:hover {
+  width: 280px !important;
 }
 
-.NavBar {
-    width: 100%;
-    height: 8rem;
-    /* position: absolute; */
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #333;
+.authNavBar ul {
+  display: flex;
+  margin-left: 10px;
+  padding: 0;
+  list-style-type: none;
+  transition: all 0.5s ease;
+  overflow: hidden;
 }
 
-.NavBarElementsContainer {
-    flex: 1;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.authNavBar li {
+  margin-right: 0;
+  transition: all 0.25s ease;
 }
 
-.topNav {
-    background-color: #333;
-    overflow: hidden;
-    padding-top: 1.5rem;
-    padding-left: 0;
-  }
-  
-  /* Style the links inside the navigation bar */
-  .topNav li{
-    float: left;
-    list-style: none;
-  }
+.ulHeading {
+  padding: 6px 3px;
+  padding-right: 10px;
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  cursor: pointer;
+  user-select: none;
+}
 
-  .topNav li a{
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  
-  /* Change the color of links on hover */
-  .topNav li a:hover {
-    background-color: #ddd;
-    color: black;
-    cursor: pointer;
-  }
-  
+.ulHeadingSvgWrapper {
+  display: flex;
+  flex: 1;
+}
+
+.ulHeadingTextWrapper {
+  display: flex;
+  flex: 1;
+  align-self: center;
+  margin-left: 5px;
+}
+
+.ulHeadingArrowWrapper {
+  display: flex;
+  justify-content: flex-end;
+  flex: 100000;
+}
+
+.liItem {
+  margin: 6px;
+}
+
+.dashboardWrapper {
+  margin-left: 5px;
+}
+
+.authNavBar a {
+  align-items: center;
+  padding: 6px 3px;
+  display: flex;
+  flex: 1;
+  background-color: transparent;
+  color: black;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.highlightSelected {
+  font-weight: 400;
+}
+
+.ulContainerList {
+  flex-direction: column;
+  margin: 10px !important;
+}
+
+.ulContainerRow {
+  max-height: 0;
+  flex-direction: row;
+}
+
+.ulContainerColumn {
+  flex-direction: column;
+  width: 100%;
+}
+
+.arrowClass {
+  width: 6px;
+  height: 6px;
+  margin-bottom: 3px;
+  display: flex;
+  transition: all 0.25s ease;
+  transform: rotate(45deg);
+  align-self: center;
+}
+
+.rotateArrow {
+  margin-bottom: 0px;
+  margin-top: 3px;
+  transform: rotate(-135deg);
+}
+
+.leftLineBefore {
+  height: auto;
+  width: 4px;
+  position: relative;  
+  transition: all 0.25s ease;
+}
+
+.showContent {
+  max-height: 500px;
+}
+
+.closeNavBar {
+  min-width: 47px;
+  width: 47px;
+}
+
+.authNavBar {
+  background-color: #fff;
+  /* box-shadow: 0 7.5px 35px rgba(8, 10, 37, .03), 0 15px 22.5px rgba(8, 10, 37, .03), 0 4px 8.5px rgba(8, 10, 37, .05), 0 2px 3px rgba(8, 10, 37, .03) */
+}
+
+.arrowClass {
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.ulHeading:hover {
+  background-color: #e0f3ff;
+  color: #6c757d;
+  fill: #6c757d;
+}
+
+.authNavBar a:hover {
+  background-color: #e0f3ff;
+  color: #6c757d;
+  fill: #6c757d;
+}
+
+.authNavBar a:focus {
+  outline: auto #e0f3ff;
+}
+
+.highlightSelected {
+  color: #6c757d;
+  fill: #6c757d;
+  background-color: #e0f3ff !important;
+}
+
+.leftLineBefore {
+  background: #e0f3ff;
+}

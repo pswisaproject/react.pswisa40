@@ -65,15 +65,17 @@ class AxiosService {
   }
 
   async put (path, data, headerData) {
+    const formData = this.prepareFormData(data);
     const request = await this.service.request({
-      method: 'put',
       url: path,
+      method: 'PUT',
       baseURL: this.apiUrl,
       responseType: 'json',
-      data,
+      data: formData,
       headers: {
         ...this.baseHeadersOption,
         Ht: headerData.Ht,
+        'Content-Type': 'multipart/form-data'
       }
     });
     return request;
