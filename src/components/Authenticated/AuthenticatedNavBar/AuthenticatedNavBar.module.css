@@ -142,14 +142,14 @@
 
 .ulHeading:hover {
   background-color: #e0f3ff;
-  color: var(--primaryLightTextHover);
-  fill: var(--primaryLightTextHover);
+  color: #6c757d;
+  fill: #6c757d;
 }
 
 .authNavBar a:hover {
   background-color: #e0f3ff;
-  color: var(--primaryLightTextHover);
-  fill: var(--primaryLightTextHover);
+  color: #6c757d;
+  fill: #6c757d;
 }
 
 .authNavBar a:focus {
@@ -157,9 +157,9 @@
 }
 
 .highlightSelected {
-  color: var(--primaryLightTextHover);
-  fill: var(--primaryLightTextHover);
-  background-color: #e0f3ff;
+  color: #6c757d;
+  fill: #6c757d;
+  background-color: #e0f3ff !important;
 }
 
 .leftLineBefore {

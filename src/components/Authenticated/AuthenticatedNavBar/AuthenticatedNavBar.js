@@ -1,8 +1,9 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './AuthenticatedNavBar.module.css';
 import { authenticatedRoutes as paths } from '../../../constants/paths';
-import AppComponentContext from '../../../contexts/AppComponentContext';
+import DashboardSvg from '../../../assets/images/svg/Dashboard';
+import ClinicsSvg from '../../../assets/images/svg/ClinicsSvg';
 
 // LOGOUT: '/logout',
 // DASHBOARD: '/dashboard',
@@ -16,7 +17,6 @@ const clinicsSection = React.createRef();
 const clinicsSectionArrowRef = React.createRef();
 const AuthenticatedNavBar = (props) => {
   const [location, setLocation] = useState('');
-  const context = useContext(AppComponentContext);
 
   // imitating didMount()
   useEffect(() => {
@@ -68,18 +68,12 @@ const AuthenticatedNavBar = (props) => {
     // helper function to add svg icons to sections
     createSvgIcon: function (menuSectionTitle) {
       var svg = '';
-      // switch (menuSectionTitle) {
-      //   case context.strings.vehicleHeading:
-      //     svg = <VehiclesSvg width='20rem' />;
-      //     break;
-      //   case context.strings.cargoHeading:
-      //     svg = <WarehouseSvg width='20rem' />;
-      //     break;
-      //   case context.strings.warehouseHeading:
-      //     svg = <CargoSvg width='20rem' />;
-      //     break;
-      // }
-      // return svg;
+      switch (menuSectionTitle) {
+        case 'Clinics':
+          svg = <ClinicsSvg width='20px' />;
+          break;
+      }
+      return svg;
       return <></>;
     }
   };
@@ -99,7 +93,7 @@ const AuthenticatedNavBar = (props) => {
             className={props.location.pathname === paths.DASHBOARD ? styles.highlightSelected : ''}
             
           >
-            {/* <DashboardSvg width='20rem' style={{ minWidth: '20rem' }} /> */}
+            <DashboardSvg width='20px' style={{ minWidth: '20px' }} />
             <div className={styles.dashboardWrapper}>Dashboard</div>
           </Link>
         </li>
@@ -112,10 +106,6 @@ const AuthenticatedNavBar = (props) => {
         {
           createSectionElements.createSectionElements(context.strings.warehouseHeading, warehouseSectionRoutes, warehouseSection, warehouseSectionArrowRef)
         } */}
-
-        <li onClick={props.onLogout}>
-          <p>Logout</p>
-        </li>
       </ul>
     </div>
   );

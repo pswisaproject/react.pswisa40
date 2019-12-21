@@ -8,6 +8,7 @@ import ClinicsContainer from './ClinicsContainer';
 import AuthenticatedNavBar from '../components/Authenticated/AuthenticatedNavBar/AuthenticatedNavBar';
 import AuthenticatedNavBarContainer from '../containers/AuthenticatedNavBarContainer';
 import ChangePasswordContainer from './ChangePasswordContainer';
+import AuthenticatedHeaderContainer from './AuthenticatedHeaderContainer';
 
 class AuthenticatedIndexContainer extends Component {
   render () {
@@ -26,12 +27,15 @@ class AuthenticatedIndexContainer extends Component {
     else if (this.props.changedPassword == 1) {
       return (
         <>
-          <AuthenticatedNavBarContainer />
-          <Switch>
-            <Route path="/dashboard" component={DashboardContainer} />
-            <Route path="/clinics" component={ClinicsContainer} />
-            <Redirect to="/dashboard" />
-          </Switch>
+          <AuthenticatedHeaderContainer />
+          <div style={{ height: 'calc(100vh - 60px)', display: 'flex', flexDirection: 'row' }}>
+            <AuthenticatedNavBarContainer />
+            <Switch>
+              <Route path="/dashboard" component={DashboardContainer} />
+              <Route path="/clinics" component={ClinicsContainer} />
+              <Redirect to="/dashboard" />
+            </Switch>
+          </div>
         </>
       );
     }
