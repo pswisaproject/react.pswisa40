@@ -1,42 +1,61 @@
 @import '../../../css/colors.css';
 
 .container { 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex: 1;
-    height: 100vh;
-    background-color: #eee;
-    padding: 2rem 3rem 2rem 3rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 1;
+  height: 100vh;
+  background-color: #eee;
 }
 
 .filterContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 75px;
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  padding: 2rem 3rem 2rem 3rem;
+  flex-wrap: wrap;
 }
 
-.searchButtonDiv {
-    display: flex;
-    margin: 0 0 0 1rem;
+.datePickerDiv {
+  margin: 0 15px 10px 0;
 }
 
-.searchButton {
-    display: flex;
-    background-color: var(--primary);
-    color: #fff;
-    border: 1px solid blue;
-    border-radius: 5px;
-    height: 30px;
-    width: 75px;
-    cursor: pointer;
-    font-size: 14px;
-    justify-content: center;
-    align-items: center;
-    user-select: none;
+.customCalendar {
+  height: 30px;
+  width: 175px;
+  border: 1px solid var(--primary);
+  border-radius: 5px;
+  padding-left: 10px;
 }
 
-.searchButton:hover {
-    background-color: var(--primaryHover);
+.selectDiv {
+  min-width: 175px;
+  width: 150px;
+  min-height: 30px;
+  margin: 0 15px 10px 0;
+}
+
+.filterButtonsDiv {
+  display: flex;
+  margin: 0 10px 0 0;
+}
+
+.filterButtons {
+  display: flex;
+  background-color: var(--primary);
+  color: #fff;
+  border: 1px solid blue;
+  border-radius: 5px;
+  height: 30px;
+  width: 75px;
+  cursor: pointer;
+  font-size: 14px;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.filterButtons:hover {
+  background-color: var(--primaryHover);
 }

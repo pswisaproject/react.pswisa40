@@ -7,7 +7,6 @@ const FilterSelect = React.forwardRef((props, ref) => {
     container: (base, state) => ({
       ...base,
       height: '30px',
-      marginBottom: '15px'
     }),
     control: function (base, state) {
       return {

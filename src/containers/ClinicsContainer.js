@@ -7,10 +7,13 @@ import searchClinics from '../store/actions/searchClinics';
 class ClinicsContainer extends Component {
   render () {
     return <Clinics
-      searchClinicsAction={this.props.searchClinics}
+      searchClinicsAction={this.searchClinicsAction}
       searchClinicsDataResponse={this.props.searchClinicsData}
-      sessionData={this.props.session}
     />;
+  }
+
+  searchClinicsAction = (data) => {
+    this.props.searchClinics(this.props.session, data);
   }
 }
 
