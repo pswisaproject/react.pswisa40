@@ -1,3 +1,42 @@
-.clinics {
-    margin: 20px;
+@import '../../../css/colors.css';
+
+.container { 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1;
+    height: 100vh;
+    background-color: #eee;
+    padding: 2rem 3rem 2rem 3rem;
+}
+
+.filterContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 75px;
+}
+
+.searchButtonDiv {
+    display: flex;
+    margin: 0 0 0 1rem;
+}
+
+.searchButton {
+    display: flex;
+    background-color: var(--primary);
+    color: #fff;
+    border: 1px solid blue;
+    border-radius: 5px;
+    height: 30px;
+    width: 75px;
+    cursor: pointer;
+    font-size: 14px;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.searchButton:hover {
+    background-color: var(--primaryHover);
 }

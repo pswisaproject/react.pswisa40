@@ -1,14 +1,63 @@
 :root {
-    /* light theme colors */
-    --light-color: green;
-    --light-bg-color: white;
-    --light-primary-button-color: white;
-    --light-secondary-button-color: green;
 
-    
-    /* dark theme colors */ 
-    --dark-color: black;
-    --dark-bg-color: gray;
-    --dark-primary-button-color: gray;
-    --dark-secondary-button-color: black;
-}
+    /* ---------- COLORS ---------- */
+  
+    /* LIGHT */
+    --primary: #545cd8;
+    --secondary: #6c757d;
+    --success: #3ac47d;
+    --info: #30b1ff;
+    --warning: #f7b924;
+    --danger: #d92550;
+    --light: #eee;
+    --dark: #343a40;
+    --focus: #444054;
+    --alternate: #83588a;
+  
+    --primaryHover: #353ed1;
+    --secondaryHover: #5a6268;
+    --successHover: #31a66a;
+    --infoHover: #0aa3ff;
+    --warningHover: #eca909;
+    --dangerHover: #b81f44;
+    --lightHover: #dbdbdb;
+    --darkHover: #23272b;
+    --focusHover: #322f3e;
+    --alternateHover: #6d4973;
+    --cloudyHover: #e0f3ff;
+  
+    --primaryActive: #2e38ca;
+    --secondaryActive: #545b6a;
+    --successActive: #2e9d64;
+    --infoActive: #009dfc;
+    --warningActive: #e0a008;
+    --dangerActive: #ac1e40;
+    --lightActive: #d5d5d5;
+    --darkActive: #1d2124;
+    --focusActive: #2d2a37;
+    --alternateActive: #65446b;
+  
+    --primaryDisabled: #9095e5;
+    --secondaryDisabled: #9fa5aa;
+    --successDisabled: #7fd8aa;
+    --infoDisabled: #78ccff;
+    --warningDisabled: #f9d170;
+    --dangerDisabled: #e6718d;
+    --lightDisabled: #f3f3f3;
+    --darkDisabled: #7b7f83;
+    --focusDisabled: #858390;
+    --alternateDisabled: #ae92b3;
+  
+    /* GRAYS */
+    --gray1: #f2f2f2;
+    --gray2: #e1e1e1;
+    --gray3: #c1c1c1;
+    --gray4: #a8a8a8;
+    --gray5: #707070;
+    --gray6: #636363;
+  
+    --primaryText: #495057;
+    --secondaryText: #8f9498;
+    --primaryBackground: #fff;
+    --secondaryBackground: #f1f4f6;
+  }
