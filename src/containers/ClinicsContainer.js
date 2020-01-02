@@ -5,6 +5,10 @@ import Clinics from '../components/Authenticated/Clinics/Clinics';
 import searchClinics from '../store/actions/searchClinics';
 
 class ClinicsContainer extends Component {
+  componentDidMount () {
+    this.searchClinicsAction(null);
+  }
+
   render () {
     return <Clinics
       searchClinicsAction={this.searchClinicsAction}

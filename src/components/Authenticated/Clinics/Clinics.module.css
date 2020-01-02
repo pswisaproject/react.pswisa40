@@ -2,18 +2,18 @@
 
 .container { 
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   flex: 1;
-  height: 100vh;
+  min-height: 100vh;
+  height: fit-content;
   background-color: #eee;
+  padding: 2rem 2rem 2rem 2rem;
 }
 
 .filterContainer {
   display: flex;
   flex-direction: row;
   height: fit-content;
-  padding: 2rem 3rem 2rem 3rem;
   flex-wrap: wrap;
 }
 
@@ -57,5 +57,81 @@
 }
 
 .filterButtons:hover {
+  background-color: var(--primaryHover);
+}
+
+.clinicCardContainer {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.clinicCard {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  width: 300px;
+  background-color: #fff;
+  border: 1px solid rgb(155, 155, 155, 0.5);
+  border-radius: 5px;
+  margin: 0 15px 10px 0;
+}
+
+.clinicInfoDiv {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0.5rem 0 0.5rem;
+}
+
+.infoDiv {
+  display: flex;
+  flex-direction: row;
+  margin: 0 0 15px 10px;
+}
+
+.clinicInfoLabel {
+  width: 150px;
+  font-size: 14px;
+  font-weight: 300;
+  user-select: none;
+}
+
+.info {
+  font-size: 14px;
+  font-weight: 400;
+  user-select: none;
+}
+
+.clinicCardOptionsDiv {
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  margin: 0.5rem 0.5rem 1rem 0.5rem;
+}
+
+.moreInfoButtonDiv {
+  display: flex;
+  margin: 0 0 0 8px;
+}
+
+.moreInfoButton {
+  display: flex;
+  width: 75px;
+  height: 30px;
+  color: #fff;
+  background-color: var(--primary);
+  border: 1px solid blue;
+  border-radius: 5px;
+  font-size: 13.5px;
+  align-self: flex-end;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+}
+
+.moreInfoButton:hover {
   background-color: var(--primaryHover);
 }

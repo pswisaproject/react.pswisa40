@@ -23,18 +23,19 @@ class Clinics extends Component {
     this.cityRef = React.createRef();
     this.ratingRef = React.createRef();
 
+    // this should be by id, not by string, but the function is already written as is.
     this.doctorTypeOptions = [
       { value: '', label: 'Enter specialty'},
-      { value: 1, label: 'Internal Medicine'},
-      { value: 2, label: 'Surgery'},
-      { value: 3, label: 'Pediactrics'},
-      { value: 4, label: 'Dermatology'},
-      { value: 5, label: 'Cardiology'},
-      { value: 6, label: 'Neurology'},
-      { value: 7, label: 'Radiology'},
-      { value: 8, label: 'Oncology'},
-      { value: 9, label: 'Psychiatry'},
-      { value: 10, label: 'Endocrinology'},
+      { value: 'INTERNAL_MEDICINE', label: 'Internal Medicine'},
+      { value: 'SURGERY', label: 'Surgery'},
+      { value: 'PEDIATRICS', label: 'Pediactrics'},
+      { value: 'DERMATOLOGY', label: 'Dermatology'},
+      { value: 'CARDIOLOGY', label: 'Cardiology'},
+      { value: 'NEUROLOGY', label: 'Neurology'},
+      { value: 'RADIOLOGY', label: 'Radiology'},
+      { value: 'ONCOLOGY', label: 'Oncology'},
+      { value: 'PSYCHIATRY', label: 'Psychiatry'},
+      { value: 'ENDOCRINOLOGY', label: 'Endocrinology'},
     ];
 
     this.ratingOptions = [
@@ -54,7 +55,43 @@ class Clinics extends Component {
       { value: 'strawberry', label: 'Strawberry' },
       { value: 'vanilla', label: 'Vanilla' }
     ];
+    console.log(this.props.searchClinicsDataResponse, 'PROPPSS');
 
+    const clinicCards = this.props.searchClinicsDataResponse && this.props.searchClinicsDataResponse.clinics_data.map((value, index) => {
+      return (
+        <div className={styles.clinicCard}>
+            <div className={styles.clinicInfoDiv}>
+              <div className={styles.infoDiv}>
+                <div className={styles.clinicInfoLabel}>Clinic name:</div>
+                <div className={styles.info}>{value.name}</div>
+              </div>
+              <div className={styles.infoDiv}>
+                <div className={styles.clinicInfoLabel}>Clinic address:</div>
+                <div className={styles.info}>{value.address}</div>
+              </div>
+              <div className={styles.infoDiv}>
+                <div className={styles.clinicInfoLabel}>Checkup price:</div>
+                <div className={styles.info}>{value.checkup_price}</div>
+              </div>
+              <div className={styles.infoDiv}>
+                <div className={styles.clinicInfoLabel}>Operation price:</div>
+                <div className={styles.info}>{value.operation_price}</div>
+              </div>
+              <div className={styles.infoDiv}>
+                <div className={styles.clinicInfoLabel}>Rating:</div>
+                <div className={styles.info}>{value.rating}</div>
+              </div>
+            </div>
+            <div className={styles.clinicCardOptionsDiv}>
+              <div className={styles.moreInfoButtonDiv}>
+                <div className={styles.moreInfoButton} onClick={(e) => this.handleMoreInfo(e)}>
+                  More Info
+                </div>
+              </div>
+            </div>
+          </div>
+      );
+    });
 
     return (
       <div className={styles.container}>
@@ -112,6 +149,9 @@ class Clinics extends Component {
               Reset
             </div>
           </div>
+        </div>
+        <div className={styles.clinicCardContainer}>
+          {clinicCards}
         </div>
       </div>
     );
