@@ -1,19 +1,53 @@
+@import '../../../css/colors.css';
+
 .container {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 1;
+  height: 100vh;
+  background-color: #eee;
 }
 
-.patientInfoDiv {
-    margin: 1rem;
-    border: 1px solid black;
-    border-radius: 8px;
+.infoDiv {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  min-height: 250px;
+  width: 350px;
+  min-width: 270px;
+  margin: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #cfcfcf;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px -1px rgba(199,199,199,1);
+  background-color: #fff;
+  flex-wrap: wrap;
 }
 
-.patientInfoDivText {
-    padding: 0.5rem 0 0 0.5rem;
+.infoDivText {
+  align-self: center;
+  margin: 0.5rem 0 1rem 0;
+  font-weight: 300;
 }
 
-.patientInfoDiv li {
-    list-style: none;
-    margin: 1rem;
+.infoFieldDiv {
+  display: flex;
+  flex-direction: row;
+  margin: 0 1rem 0.5rem 1rem;
+}
+
+.infoField {
+  display: flex;
+  align-self: flex-start;
+  font-size: 14px;
+  font-weight: 300;
+  width: 150px;
+}
+
+.info {
+  display: flex;
+  align-self: flex-end;
+  font-size: 14px;
+  font-weight: 300;
 }

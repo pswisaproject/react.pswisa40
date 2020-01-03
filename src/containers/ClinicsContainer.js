@@ -5,12 +5,19 @@ import Clinics from '../components/Authenticated/Clinics/Clinics';
 import searchClinics from '../store/actions/searchClinics';
 
 class ClinicsContainer extends Component {
+  componentDidMount () {
+    this.searchClinicsAction(null);
+  }
+
   render () {
     return <Clinics
-      searchClinicsAction={this.props.searchClinics}
+      searchClinicsAction={this.searchClinicsAction}
       searchClinicsDataResponse={this.props.searchClinicsData}
-      sessionData={this.props.session}
     />;
+  }
+
+  searchClinicsAction = (data) => {
+    this.props.searchClinics(this.props.session, data);
   }
 }
 
