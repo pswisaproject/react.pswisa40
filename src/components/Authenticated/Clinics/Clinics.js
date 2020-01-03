@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Input from '../../UI/FormElements/Input/Input';
-import Button from '../../UI/Button/Button';
 import styles from './Clinics.module.css';
 import FilterSelect from '../../UI/FormElements/FilterSelect/FilterSelect';
 import DatePicker from 'react-datepicker';
@@ -12,7 +10,8 @@ class Clinics extends Component {
     selectedDoctorType: '',
     selectedCountry: '',
     selectedCity: '',
-    selectedRating: ''
+    selectedRating: '',
+    readingMore: false
   }
 
   constructor (props) {
@@ -56,42 +55,68 @@ class Clinics extends Component {
       { value: 'vanilla', label: 'Vanilla' }
     ];
     console.log(this.props.searchClinicsDataResponse, 'PROPPSS');
-
     const clinicCards = this.props.searchClinicsDataResponse && this.props.searchClinicsDataResponse.clinics_data.map((value, index) => {
       return (
-        <div className={styles.clinicCard}>
-            <div className={styles.clinicInfoDiv}>
-              <div className={styles.infoDiv}>
-                <div className={styles.clinicInfoLabel}>Clinic name:</div>
-                <div className={styles.info}>{value.name}</div>
-              </div>
-              <div className={styles.infoDiv}>
-                <div className={styles.clinicInfoLabel}>Clinic address:</div>
-                <div className={styles.info}>{value.address}</div>
-              </div>
-              <div className={styles.infoDiv}>
-                <div className={styles.clinicInfoLabel}>Checkup price:</div>
-                <div className={styles.info}>{value.checkup_price}</div>
-              </div>
-              <div className={styles.infoDiv}>
-                <div className={styles.clinicInfoLabel}>Operation price:</div>
-                <div className={styles.info}>{value.operation_price}</div>
-              </div>
-              <div className={styles.infoDiv}>
-                <div className={styles.clinicInfoLabel}>Rating:</div>
-                <div className={styles.info}>{value.rating}</div>
-              </div>
-            </div>
-            <div className={styles.clinicCardOptionsDiv}>
-              <div className={styles.moreInfoButtonDiv}>
-                <div className={styles.moreInfoButton} onClick={(e) => this.handleMoreInfo(e)}>
-                  More Info
+        <>
+        {/* ---------- CLINIC CARDS BELOW ---------- */}
+          {!this.state.readingMore && (
+            <div className={styles.clinicCard} key={index}>
+              <div className={styles.clinicInfoDiv}>
+                <div className={styles.infoDiv}>
+                  <div className={styles.clinicInfoLabel}>Clinic name:</div>
+                  <div className={styles.info}>{value.name}</div>
+                </div>
+                <div className={styles.infoDiv}>
+                  <div className={styles.clinicInfoLabel}>Clinic address:</div>
+                  <div className={styles.info}>{value.address}</div>
+                </div>
+                <div className={styles.infoDiv}>
+                  <div className={styles.clinicInfoLabel}>Checkup price:</div>
+                  <div className={styles.info}>{value.checkup_price}</div>
+                </div>
+                <div className={styles.infoDiv}>
+                  <div className={styles.clinicInfoLabel}>Operation price:</div>
+                  <div className={styles.info}>{value.operation_price}</div>
+                </div>
+                <div className={styles.infoDiv}>
+                  <div className={styles.clinicInfoLabel}>Rating:</div>
+                  <div className={styles.info}>{value.rating}</div>
                 </div>
               </div>
-            </div>
-          </div>
-      );
-    });
+              <div className={styles.clinicCardOptionsDiv}>
+                <div className={styles.moreInfoButtonDiv}>
+                  <div className={styles.moreInfoButton} onClick={(e) => this.handleMoreInfo(e)}>
+                    More Info
+                  </div>
+                </div>
+              </div>
+            </div>)}
+            {/* ---------- DOCTOR CARDS BELOW ---------- */}
+          {this.state.readingMore && (
+            value.doctors_data.map((value, index) => {
+              return (
+                <div className={styles.clinicCard} key={index}>
+                  <div className={styles.clinicInfoDiv}>
+                    <div className={styles.infoDiv}>
+                      <div className={styles.clinicInfoLabel}>Doctor name:</div>
+                      <div className={styles.info}>{value.name}</div>
+                    </div>
+                    <div className={styles.infoDiv}>
+                      <div className={styles.clinicInfoLabel}>Doctor surname:</div>
+                      <div className={styles.info}>{value.surname}</div>
+                    </div>
+                    <div className={styles.infoDiv}>
+                      <div className={styles.clinicInfoLabel}>Doctor rating:</div>
+                      <div className={styles.info}>{value.rating}</div>
+                    </div>
+                  </div>
+                </div>
+              )
+            })
+          )}
+        </>
+    )});
+      
 
     return (
       <div className={styles.container}>
@@ -150,7 +175,13 @@ class Clinics extends Component {
             </div>
           </div>
         </div>
-        <div className={styles.clinicCardContainer}>
+        {this.state.readingMore && (
+          <div className={styles.filterButtonsDiv}>
+            <div className={styles.filterButtons} onClick={(e) => this.handleMoreInfo(e)}>
+              Less Info
+            </div>
+        </div>)}
+        <div className={styles.clinicCardContainer}> 
           {clinicCards}
         </div>
       </div>
@@ -185,6 +216,10 @@ class Clinics extends Component {
     }
   }
 
+  handleMoreInfo = (e) => {
+    this.setState({ readingMore: !this.state.readingMore });
+  }
+
   handleSearch = (e) => {
     const selectedDoctorType = this.state.selectedDoctorType;
     const selectedRating = this.state.selectedRating;
@@ -204,6 +239,7 @@ class Clinics extends Component {
 
   handleReset = (e) => {
     this.setState({
+      readingMore: false,
       date: null,
       selectedCity: '',
       selectedCountry: '',
