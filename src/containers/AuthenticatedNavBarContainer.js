@@ -9,7 +9,7 @@ import toggleAuthNavBar from '../store/actions/authNavBarState';
 
 class AuthenticatedNavBarContainer extends Component {
   render () {
-      console.log('ovde sam sad', this.props);
+      // console.log('ovde sam sad', this.props);
     return (
       <>
         <AuthenticatedNavBar
@@ -19,6 +19,7 @@ class AuthenticatedNavBarContainer extends Component {
           theme={this.props.theme}
           toggleAuthNavBar={this.props.toggleAuthNavBar}
           authNavBarOpened={this.props.authNavBarOpened}
+          session={this.props.headerData}
         />
       </>
     );
@@ -37,7 +38,7 @@ function mapStateToProps (state) {
   return {
     headerData: state.session,
     // permissions: state.permissions.response.data,
-    authNavBarOpened: state.authNavBarState.opened
+    authNavBarOpened: state.authNavBarState.opened,
   };
 }
 

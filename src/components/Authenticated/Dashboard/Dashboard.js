@@ -63,12 +63,4 @@ const Dashboard = (props) => {
   }
 };
 
-function extractPatientInfo (props) {
-  const extracted = props.patientInfo;
-  const patientInfo = {
-    healthcareID: props.patientInfo.healthcare_id
-  }
-  return patientInfo;
-}
-
 export default Dashboard;

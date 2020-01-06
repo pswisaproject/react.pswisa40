@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styles from './Register.module.css';
 import Input from '../../UI/FormElements/Input/Input';
 import Button from '../../UI/Button/Button';
-import { prepareInputErrorCodesFromApiResponse } from '../../../assets/helpers/common';
+// import { prepareInputErrorCodesFromApiResponse } from '../../../assets/helpers/common';
 
 const FORM_ERROR_CODES = [];
 

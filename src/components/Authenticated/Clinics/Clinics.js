@@ -54,7 +54,6 @@ class Clinics extends Component {
       { value: 'strawberry', label: 'Strawberry' },
       { value: 'vanilla', label: 'Vanilla' }
     ];
-    console.log(this.props.searchClinicsDataResponse, 'PROPPSS');
     const clinicCards = this.props.searchClinicsDataResponse && this.props.searchClinicsDataResponse.clinics_data.map((value, index) => {
       return (
         <>

@@ -8,13 +8,21 @@ import ClinicsSvg from '../../../assets/images/svg/ClinicsSvg';
 // LOGOUT: '/logout',
 // DASHBOARD: '/dashboard',
 // CLINICS: '/clinics'
+// PENDING_USSERS: '/pending_users'
 
 const clinicSectionRoutes = [
-  paths.CLINICS
+  paths.CLINICS,
 ];
+
+const adminSectionRoutes = [
+  paths.PENDING_USERS
+]
 
 const clinicsSection = React.createRef();
 const clinicsSectionArrowRef = React.createRef();
+const adminSection = React.createRef();
+const adminSectionArrowRef = React.createRef();
+
 const AuthenticatedNavBar = (props) => {
   const [location, setLocation] = useState('');
 
@@ -32,7 +40,7 @@ const AuthenticatedNavBar = (props) => {
       const generatedUlElements = menuRoutes.map((e, i) => {
         return (
           <li key={i} className={styles.liItem}>
-            <Link to={e} className={props.location.pathname === e ? styles.highlightSelected : ''} >Clinics</Link>
+            <Link to={e} className={props.location.pathname === e ? styles.highlightSelected : ''}>Aj popravi ovo mrzi me da skontam</Link>
           </li>
         );
       });
@@ -74,7 +82,6 @@ const AuthenticatedNavBar = (props) => {
           break;
       }
       return svg;
-      return <></>;
     }
   };
 
@@ -100,6 +107,9 @@ const AuthenticatedNavBar = (props) => {
         {
           createSectionElements.createSectionElements('Clinics', clinicSectionRoutes, clinicsSection, clinicsSectionArrowRef)
         }
+        {
+          createSectionElements.createSectionElements('Admin', adminSectionRoutes, adminSection, adminSectionArrowRef)
+        }
         {/* {
           createSectionElements.createSectionElements(context.strings.cargoHeading, cargoSectionRoutes, cargoSection, cargoSectionArrowRef)
         }
@@ -115,6 +125,9 @@ function openSelectedSection (location) {
   switch (location) {
     case paths.CLINICS:
       toggleSection(clinicsSection, clinicsSectionArrowRef);
+      break;
+    case paths.PENDING_USERS:
+      toggleSection(adminSection, adminSectionArrowRef);
       break;
     default:
       break;
