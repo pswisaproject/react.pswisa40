@@ -5,7 +5,8 @@ import { withRouter, Switch, Route, Redirect } from 'react-router-dom';
 import AppComponentContext from '../contexts/AppComponentContext';
 import DashboardContainer from '../containers/DashboardContainer';
 import ClinicsContainer from './ClinicsContainer';
-import AuthenticatedNavBar from '../components/Authenticated/AuthenticatedNavBar/AuthenticatedNavBar';
+import PendingUsersContainer from './PendingUsersContainer';
+// import AuthenticatedNavBar from '../components/Authenticated/AuthenticatedNavBar/AuthenticatedNavBar';
 import AuthenticatedNavBarContainer from '../containers/AuthenticatedNavBarContainer';
 import ChangePasswordContainer from './ChangePasswordContainer';
 import AuthenticatedHeaderContainer from './AuthenticatedHeaderContainer';
@@ -19,12 +20,12 @@ class AuthenticatedIndexContainer extends Component {
   }
 
   changedPasswordCheck () {
-    if (this.props.changedPassword == 0) {
+    if (this.props.changedPassword === '0') {
       return (
         <ChangePasswordContainer />
       );
     }
-    else if (this.props.changedPassword == 1) {
+    else if (this.props.changedPassword === '1') {
       return (
         <>
           <AuthenticatedHeaderContainer />
@@ -33,6 +34,7 @@ class AuthenticatedIndexContainer extends Component {
             <Switch>
               <Route path="/dashboard" component={DashboardContainer} />
               <Route path="/clinics" component={ClinicsContainer} />
+              <Route path='/pending_users' component={PendingUsersContainer} />
               <Redirect to="/dashboard" />
             </Switch>
           </div>

@@ -1,0 +1,116 @@
+@import '../../../../css/colors.css';
+
+.pendingUsersContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100vh;
+  height: fit-content;
+  background-color: #eee;
+  padding: 2rem 2rem 2rem 2rem;
+}
+
+.containerTitle {
+  font-size: 20px;
+  font-weight: 500;
+  align-self: center;
+  margin: 0 0 3rem 0;
+}
+
+.pendingUsersListContainer {
+  align-self: center;
+}
+
+.tableRow {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  border: 1px solid black;
+  min-width: fit-content;
+  width: fit-content;
+}
+
+.userContainer {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  width: fit-content;
+}
+
+.userId {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100px;
+  width: 100px;
+  text-align: center;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  height: 50px;
+}
+
+.userEmail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 250px;
+  width: 250px;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
+.userRegReq { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 200px;
+  width: 200px;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
+.approveDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100px;
+  width: 100px;
+  text-align: center;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.denyDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100px;
+  width: 100px;
+  text-align: center;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.approveDenyButtonDiv {
+  display: flex;
+}
+
+.approveDenyButton {
+  display: flex;
+  background-color: var(--primary);
+  font-size: 14px;
+  color: #fff;
+  border-radius: 5px;
+  outline: none;
+  height: 25px;
+  width: 70px;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+}
+
+.approveDenyButton:hover {
+  background-color: var(--primaryHover);
+}
