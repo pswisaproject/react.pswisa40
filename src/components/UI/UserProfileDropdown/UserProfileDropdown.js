@@ -1,7 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './UserProfileDropdown.module.css';
 import TicketSvg from '../../../assets/images/svg/TicketSvg';
 import ChatSvg from '../../../assets/images/svg/ChatSvg';
+import { authenticatedRoutes as paths } from '../../../constants/paths';
 
 const UserProfileDropdown = (props) => {
   const dropdownRef = useRef(null);
@@ -53,12 +55,7 @@ const UserProfileDropdown = (props) => {
                 <ul className={styles.listColumn}>
                   <li className={styles.listHeader}>My account</li>
                   {/* Temporary addresses to suppress errors */}
-                  <li className={styles.listItem}><a href='http://localhost:3000/dashboard'>Profile</a></li>
-                  <li className={styles.listItem}><a href='http://localhost:3000/dashboard'>Inbox</a></li>
-                  <li className={styles.listItem}><a href='http://localhost:3000/dashboard'>Settings</a></li>
-                  <li className={styles.listHeader}>Activity</li>
-                  <li className={styles.listItem}><a href='http://localhost:3000/dashboard'>Chat</a></li>
-                  <li className={styles.listItem}><a href='http://localhost:3000/dashboard'>Change password</a></li>
+                  <li className={styles.listItem}><Link to={paths.EDIT_PROFILE}>Edit Profile</Link></li>
                 </ul>
               </div>
             </div>

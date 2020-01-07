@@ -8,6 +8,7 @@ import searchClinics from './searchClinics';
 import authNavBarState from './authNavBarState';
 import pendingUsers from './getPendingUsers';
 import handleUserRegistration from './handleUserRegistration';
+import editUser from './editUser';
 
 const appReducer = combineReducers({
   /* application top-level reducers */
@@ -19,7 +20,8 @@ const appReducer = combineReducers({
   pendingUsers,
   searchClinics,
   authNavBarState,
-  handleUserRegistration
+  handleUserRegistration,
+  editUser
 //   theme,
 //   language,
 //   loggedInStatus

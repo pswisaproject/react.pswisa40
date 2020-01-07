@@ -9,7 +9,8 @@ const nonAuthenticatedRoutes = {
     LOGOUT: '/logout',
     DASHBOARD: '/dashboard',
     CLINICS: '/clinics',
-    PENDING_USERS: '/pending_users'
+    PENDING_USERS: '/pending_users',
+    EDIT_PROFILE: '/edit_profile'
   }
   
   export {

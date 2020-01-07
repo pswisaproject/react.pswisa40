@@ -26,7 +26,7 @@ function editError (error) {
 
 export default function editUser (data, headerData) {
   const url = 'users/editProfile';
-  const method = 'PUT';
+  const method = 'POST';
   return dispatch => {
     dispatch(editRequest());
     return api(url, data, method, headerData)

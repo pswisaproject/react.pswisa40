@@ -1,0 +1,100 @@
+@import '../../../css/colors.css';
+
+.editProfileContainer { 
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100vh;
+  height: fit-content;
+  background-color: #eee;
+  padding: 2rem 2rem 2rem 2rem;
+}
+
+.EditProfileTitle {
+  font-size: 20px;
+  font-weight: 500;
+  align-self: center;
+  margin: 0 0 3rem 0;
+  user-select: none;
+}
+
+.allInputsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: row;
+  margin: 0 0 15px 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputLabel {
+  min-width: 150px;
+  font-size: 14px;
+  font-weight: 300;
+  user-select: none;
+}
+
+.input {
+  min-width: 150px;
+  min-height: 30px;
+  border: 1px solid var(--primary);
+  border-radius: 5px;
+  padding: 0 0 0 10px;
+  outline: none;
+}
+
+.select {
+  min-width: 150px;
+  min-height: 30px;
+  border: 1px solid var(--primary);
+  border-radius: 5px;
+  padding: 0 0 0 10px;
+  outline: none;
+}
+
+.submitButtonDiv {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0 0 0;
+}
+
+.submitButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid blue;
+  border-radius: 5px;
+  color: #fff;
+  background-color: var(--primary);
+  font-size: 14px;
+  font-weight: 400;
+  width: 75px;
+  height: 30px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background-color: var(--primaryHover);
+}
+
+.noteDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  margin: 30px 0 0 0;
+  border: 1px solid red;
+  background-color: pink;
+  height: 50px;
+  min-width: 350px;
+}
+
+.note {
+  font-size: 14px;
+}

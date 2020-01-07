@@ -10,6 +10,7 @@ import PendingUsersContainer from './PendingUsersContainer';
 import AuthenticatedNavBarContainer from '../containers/AuthenticatedNavBarContainer';
 import ChangePasswordContainer from './ChangePasswordContainer';
 import AuthenticatedHeaderContainer from './AuthenticatedHeaderContainer';
+import EditProfileContainer from './EditProfileContainer';
 
 class AuthenticatedIndexContainer extends Component {
   render () {
@@ -35,6 +36,7 @@ class AuthenticatedIndexContainer extends Component {
               <Route path="/dashboard" component={DashboardContainer} />
               <Route path="/clinics" component={ClinicsContainer} />
               <Route path='/pending_users' component={PendingUsersContainer} />
+              <Route path='/edit_profile' component={EditProfileContainer} />
               <Redirect to="/dashboard" />
             </Switch>
           </div>
