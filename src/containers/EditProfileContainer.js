@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import EditProfile from '../components/Authenticated/EditProfile/EditProfile';
-import editUser from '../store/actions/editUser';
+import editUserAction from '../store/actions/editUser';
 
 class EditProfileContainer extends Component {
   constructor (props) {
@@ -12,25 +12,27 @@ class EditProfileContainer extends Component {
 
   render () {
     return <EditProfile
-      editUser={this.editUser}
+      // editUserState={this.props.editUser}
+      editUserAction={this.editUserAction}
     />;
   }
 
-  editUser = (data) => {
-    this.props.editUser(data, this.hData);
+  editUserAction = (data) => {
+    this.props.editUserAction(data, this.hData);
   }
 }
 
 function mapStateToProps (state) {
   return {
-    session: state.session
+    session: state.session,
+    // editUser: state.editUser
   };
 }
 
 function mapDispatchToProps (dispatch) {
   return bindActionCreators(
     {
-      editUser
+      editUserAction
     }, dispatch);
 }
 
