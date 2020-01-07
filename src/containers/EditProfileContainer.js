@@ -12,7 +12,7 @@ class EditProfileContainer extends Component {
 
   render () {
     return <EditProfile
-      // editUserState={this.props.editUser}
+      editUser={this.props.editUser}
       editUserAction={this.editUserAction}
     />;
   }
@@ -25,7 +25,7 @@ class EditProfileContainer extends Component {
 function mapStateToProps (state) {
   return {
     session: state.session,
-    // editUser: state.editUser
+    editUserError: state.editUser.error
   };
 }
 
